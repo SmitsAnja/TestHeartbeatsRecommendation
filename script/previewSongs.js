@@ -37,8 +37,8 @@ var playlistID;
 var arrayTracks = [];
 var arrayArtistsID = [];
 
-if (localStorage.getItem("year") != "") {
-  var yearBorn = localStorage.getItem("year");
+if (localStorage.getItem("yearInput") != "") {
+  var yearBorn = localStorage.getItem("yearInput");
 } else {
   var yearBorn = 1955;
 }

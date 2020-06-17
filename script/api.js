@@ -32,11 +32,11 @@ if (!_token) {
   )}&response_type=token`;
 }
 
-function passString(PlaylistName, genre, artist, year) {
+function passString(PlaylistName, genre, artist, yearInput) {
   window.localStorage.setItem("PlaylistName", PlaylistName);
   window.localStorage.setItem("genre", genre);
   window.localStorage.setItem("artist", artist);
-  window.localStorage.setItem("year", year);
+  window.localStorage.setItem("yearInput", yearInput);
   window.localStorage.setItem("Authorization_key", _token);
   location.href = "previewSongs.html";
 }
@@ -45,6 +45,6 @@ function passStrings() {
   PlaylistName = document.getElementById("playlistName").value;
   genre = document.getElementById("genre").value;
   artist = document.getElementById("artist").value;
-  year = document.getElementById("year").value;
+  yearInput = document.getElementById("year").value;
   passString(PlaylistName, genre, artist, year);
 }
