@@ -216,7 +216,7 @@ function getTrackYear(queryResponse) {
   console.log(trackId);
   arrayTracks.push(trackId);
   console.log(arrayTracks);
-  if (arrayTracks.length == arrayArtists.length) {
+  if (arrayTracks.length == 3) {
     fetchRecommendation(arrayTracks);
   }
 }
