@@ -46,5 +46,5 @@ function passStrings() {
   genre = document.getElementById("genre").value;
   artist = document.getElementById("artist").value;
   yearInput = document.getElementById("year").value;
-  passString(PlaylistName, genre, artist, year);
+  passString(PlaylistName, genre, artist, yearInput);
 }
