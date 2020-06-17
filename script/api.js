@@ -22,7 +22,6 @@ const redirectUri =
   "https://smitsanja.github.io/TestHeartbeatsRecommendation/index.html";
 const scopes = ["playlist-modify-private"];
 
-console.log("weeeee");
 console.log(_token);
 // If there is no token, redirect to Spotify authorization
 if (!_token) {
@@ -30,4 +29,8 @@ if (!_token) {
   window.location = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join(
     "%20"
   )}&response_type=token`;
+}
+
+function passString() {
+  window.localStorage.setItem("Authorization_key", _token);
 }
