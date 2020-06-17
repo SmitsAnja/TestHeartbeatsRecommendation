@@ -1,5 +1,6 @@
-Authorization_key =
-  "BQCDqRJaaG1BKw2aAkLgbJlgdnTyI8pNkZ5QKuEl8Ka6_8cH8u8_5HTVj2h__HeMFt3mLE17qd9oYIenTnxHRoShR9CqrcYRAySp1KpdxWH4FoW4wWq1r5skojReq1pPOLB-hZQ7m2d-xXDF5pnSHo5zyGav5l5dwtLWRtMy8Qa9UvY16cyNhjWFNElGI-yK8ofkOrvpbu6aY7UXfmk0m5NLG3F2Jzbm8w";
+//Authorization_key ="BQCDqRJaaG1BKw2aAkLgbJlgdnTyI8pNkZ5QKuEl8Ka6_8cH8u8_5HTVj2h__HeMFt3mLE17qd9oYIenTnxHRoShR9CqrcYRAySp1KpdxWH4FoW4wWq1r5skojReq1pPOLB-hZQ7m2d-xXDF5pnSHo5zyGav5l5dwtLWRtMy8Qa9UvY16cyNhjWFNElGI-yK8ofkOrvpbu6aY7UXfmk0m5NLG3F2Jzbm8w";
+
+Authorization_key = localStorage.getItem("Authorization_key");
 let customHeaders = {
   "Content-Type": "application/json",
   Authorization: `Bearer ${Authorization_key}`,
