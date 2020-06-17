@@ -219,9 +219,8 @@ function getTrackYear(queryResponse) {
 /* #endregion */
 
 let fetchRecommendation = async function (artistid) {
-  var genre = "";
   // Eerst bouwen we onze url op
-  if (genre == "") {
+  if (arrayGenres != "") {
     //const SERVER_ENDPOINT = `${URI}/recommendations?market=BE&seed_artists=${artistid}&seed_genres=${arrayGenres}&seed_tracks=${trackid}`;
     //const SERVER_ENDPOINT = `${URI}/recommendations?year:${yearMin}-${yearMax}&market=BE&seed_artists=${artistid}&seed_genres=${arrayGenres}`;
     const SERVER_ENDPOINT = `${URI}/recommendations?limit=100&market=BE&seed_tracks=${artistid}&seed_genres=${arrayGenres}`;
