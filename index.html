@@ -1,0 +1,8 @@
+<main id="app">
+    <template v-if="me">
+        {{ me }}
+    </template>
+    <template v-else>
+        <button @click="login">Login with Spotify</button>
+    </template>
+</main>

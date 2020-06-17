@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="nl">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Heartbeats - Playlists</title>
+    <meta name="description" content="THE website that helps to catch your train!">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#cb0037">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/screenMenu.css">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Javascript -->
+    <script defer src="./script/previewSongsGenerated.js"></script>
+</head>
+
+<header>
+    <div class="o-row">
+        <div class="c-top__border">
+            <div class="c-top__border-flex">
+                <a class="c-icon__arrow-back" href="./previewSongs.html">
+                    <span>
+                        <svg xmlns=" http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" /></svg>
+                    </span>
+                </a>
+                <h1 class="c-top__border-title js-load_gebruikersnaam">
+                    "Gebruikersnaam hier"
+                </h1>
+
+            </div>
+        </div>
+    </div>
+</header>
+
+<body class="c-background__Spotify">
+    <div class="o-row">
+        <div class="c-title js-load__playlist-title">
+            <h1>
+                Playlist "playlistnaam"
+            </h1>
+        </div>
+    </div>
+    <div class="o-row__body">
+        <div class="o-container">
+            <div class="c-card__body-Spotify">
+                <div class="c-playlist__Spotify js-load__playlist">
+                    <iframe src="https://open.spotify.com/embed?uri=spotify:album:5ht7ItJgpBH7W6vJ5BqpPr" width="320"
+                        height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                </div>
+                <input class="c-button__red-black-background" type="submit" value="Opslaan"></input>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

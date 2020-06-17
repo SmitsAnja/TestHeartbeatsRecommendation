@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="nl">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Heartbeats - Playlists</title>
+    <meta name="description" content="THE website that helps to catch your train!">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#cb0037">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/screenMenu.css">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Javascript -->
+    <script defer src="./script/previewSongs.js"></script>
+</head>
+
+<header>
+    <div class="o-row">
+        <div class="c-top__border">
+            <div class="c-top__border-flex">
+                <a class="c-icon__arrow-back" href="#toevoegen">
+                    <span>
+                        <svg xmlns=" http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" /></svg>
+                    </span>
+                </a>
+                <h1 class="c-top__border-title js-load_gebruikersnaam">
+                    "Gebruikersnaam hier"
+                </h1>
+
+            </div>
+        </div>
+    </div>
+</header>
+
+<body>
+    <div class="o-row">
+        <div class="c-title js-load__playlist-title">
+            <h1>
+                Preview liedjes
+            </h1>
+        </div>
+    </div>
+    <div class="o-row__body">
+        <div class="o-container__preview">
+            <div class="c-preview">
+                <span class="c-preview__arrows">
+                    <a class="prev" id="prev" onclick="plusSong(-1);">
+                        <svg class="c-icon__prev c-icon__prev-non_active" xmlns="http://www.w3.org/2000/svg"
+                            width="17.29" height="28" viewBox="0 0 17.29 28">
+                            <path id="Path_363" data-name="Path 363" d="M8,30.71,18.687,20,8,9.29,11.29,6l14,14-14,14Z"
+                                transform="translate(-8 -6)" />
+                        </svg>
+                    </a>
+                    <a class="next" id="next" onclick="plusSong(1);">
+                        <svg class="c-icon__next c-icon__next-active" xmlns="http://www.w3.org/2000/svg" width="17.29"
+                            height="28" viewBox="0 0 17.29 28">
+                            <path id="Path_363" data-name="Path 363" d="M8,30.71,18.687,20,8,9.29,11.29,6l14,14-14,14Z"
+                                transform="translate(-8 -6)" />
+                        </svg>
+                    </a>
+                </span>
+            </div>
+            <div class="js-load-all-songs">
+                <div class="c-preview js-load-song-preview">
+                    <div class="c-widget__song">
+                        <iframe class="c-iframe" src="https://open.spotify.com/embed/track/20I6sIOMTCkB6w7ryavxtO"
+                            frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    </div>
+                </div>
+                <div class="c-preview js-load-song-preview">
+                    <div class="c-widget__song">
+                        <iframe class="c-iframe" src="https://open.spotify.com/embed/track/6eVj2ARRKQiy2Gb9Za7jnf"
+                            frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    </div>
+                </div>
+                <div class="c-preview js-load-song-preview">
+                    <div class="c-widget__song">
+                        <iframe class="c-iframe" src="https://open.spotify.com/embed/track/2zNv1HqUrYRoYCKry4P5bD"
+                            frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    </div>
+                </div>
+                <div class="c-preview js-load-song-preview">
+                    <div class="c-widget__song">
+                        <iframe class="c-iframe" src="https://open.spotify.com/embed/track/0nEK9ANPASnotmyrU8FcfC"
+                            frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    </div>
+                </div>
+                <div class="c-preview js-load-song-preview">
+                    <div class="c-widget__song">
+                        <iframe class="c-iframe" src="https://open.spotify.com/embed/track/3dlHVAYjHXI7bUN4wVNbwm"
+                            frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="c-preview">
+                <a class="c-smiley__green" id="smiley-green" onclick="plusSong(1);">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="130"
+                        height="130" viewBox="0 0 130 130">
+                        <defs>
+                            <filter id="Rectangle_329" x="0" y="0" width="130" height="130"
+                                filterUnits="userSpaceOnUse">
+                                <feOffset dy="3" input="SourceAlpha" />
+                                <feGaussianBlur stdDeviation="3" result="blur" />
+                                <feFlood flood-opacity="0.2" />
+                                <feComposite operator="in" in2="blur" />
+                                <feComposite in="SourceGraphic" />
+                            </filter>
+                        </defs>
+                        <g id="Group_354" data-name="Group 354" transform="translate(-47 -410)">
+                            <g transform="matrix(1, 0, 0, 1, 47, 410)" filter="url(#Rectangle_329)">
+                                <rect id="Rectangle_329-2" data-name="Rectangle 329" width="112" height="112" rx="56"
+                                    transform="translate(9 6)" fill="#15d760" />
+                            </g>
+                            <g id="smile_1_" data-name="smile (1)" transform="translate(56 416)">
+                                <g id="Group_365" data-name="Group 365">
+                                    <g id="Group_364" data-name="Group 364">
+                                        <path id="Path_406" data-name="Path 406"
+                                            d="M56,0a56,56,0,1,0,56,56A56,56,0,0,0,56,0Zm0,104a48,48,0,1,1,48-48A48,48,0,0,1,56,104Z" />
+                                    </g>
+                                </g>
+                                <g id="Group_367" data-name="Group 367" transform="translate(28 40)">
+                                    <g id="Group_366" data-name="Group 366">
+                                        <circle id="Ellipse_46" data-name="Ellipse 46" cx="8" cy="8" r="8" />
+                                    </g>
+                                </g>
+                                <g id="Group_369" data-name="Group 369" transform="translate(68 40)">
+                                    <g id="Group_368" data-name="Group 368">
+                                        <circle id="Ellipse_47" data-name="Ellipse 47" cx="8" cy="8" r="8" />
+                                    </g>
+                                </g>
+                                <g id="Group_371" data-name="Group 371" transform="translate(39.888 67.91)">
+                                    <g id="Group_370" data-name="Group 370">
+                                        <path id="Path_407" data-name="Path 407"
+                                            d="M201.618,291.358a4,4,0,0,0-5.6-.813q-.115.086-.223.18h0a16.1,16.1,0,0,1-18.992,0,4,4,0,1,0-5.231,6.052q.108.094.223.18a23.884,23.884,0,0,0,29.008,0A4,4,0,0,0,201.618,291.358Z"
+                                            transform="translate(-170.189 -289.75)" />
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                </a>
+                <a class="c-smiley__red" id="smiley-red" onclick="plusSong(1);smileyRed()">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="130"
+                        height="130" viewBox="0 0 130 130">
+                        <defs>
+                            <filter id="Rectangle_329" x="0" y="0" width="130" height="130"
+                                filterUnits="userSpaceOnUse">
+                                <feOffset dy="3" input="SourceAlpha" />
+                                <feGaussianBlur stdDeviation="3" result="blur" />
+                                <feFlood flood-opacity="0.2" />
+                                <feComposite operator="in" in2="blur" />
+                                <feComposite in="SourceGraphic" />
+                            </filter>
+                        </defs>
+                        <g id="Group_372" data-name="Group 372" transform="translate(-47 -410)">
+                            <g transform="matrix(1, 0, 0, 1, 47, 410)" filter="url(#Rectangle_329)">
+                                <rect id="Rectangle_329-2" data-name="Rectangle 329" width="112" height="112" rx="56"
+                                    transform="translate(9 6)" fill="#cb0037" />
+                            </g>
+                            <g id="elims" transform="translate(56 416)">
+                                <g id="Group_365" data-name="Group 365">
+                                    <g id="Group_364" data-name="Group 364">
+                                        <path id="Path_406" data-name="Path 406"
+                                            d="M56,0a56,56,0,1,0,56,56A56,56,0,0,0,56,0Zm0,104a48,48,0,1,1,48-48A48,48,0,0,1,56,104Z" />
+                                    </g>
+                                </g>
+                                <g id="Group_367" data-name="Group 367" transform="translate(28 40)">
+                                    <g id="Group_366" data-name="Group 366">
+                                        <circle id="Ellipse_46" data-name="Ellipse 46" cx="8" cy="8" r="8" />
+                                    </g>
+                                </g>
+                                <g id="Group_369" data-name="Group 369" transform="translate(68 40)">
+                                    <g id="Group_368" data-name="Group 368">
+                                        <circle id="Ellipse_47" data-name="Ellipse 47" cx="8" cy="8" r="8" />
+                                    </g>
+                                </g>
+                                <g id="Group_371" data-name="Group 371"
+                                    transform="translate(72.112 80.024) rotate(180)">
+                                    <g id="Group_370" data-name="Group 370">
+                                        <path id="Path_407" data-name="Path 407"
+                                            d="M201.618,291.358a4,4,0,0,0-5.6-.813q-.115.086-.223.18h0a16.1,16.1,0,0,1-18.992,0,4,4,0,1,0-5.231,6.052q.108.094.223.18a23.884,23.884,0,0,0,29.008,0A4,4,0,0,0,201.618,291.358Z"
+                                            transform="translate(-170.189 -289.75)" />
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                </a>
+            </div>
+            <div class="c-preview c-icon__dots">
+                <span class="c-icon__dot" onclick="currentSong(1)"></span>
+                <span class="c-icon__dot" onclick="currentSong(2)"></span>
+                <span class="c-icon__dot" onclick="currentSong(3)"></span>
+                <span class="c-icon__dot" onclick="currentSong(4)"></span>
+                <span class="c-icon__dot" onclick="currentSong(5)"></span>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

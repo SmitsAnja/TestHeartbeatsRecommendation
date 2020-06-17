@@ -1,0 +1,1372 @@
+/*------------------------------------*\
+#FONTS
+\*------------------------------------*/
+
+/*------------------------------------*\
+#Variables
+\*------------------------------------*/
+
+:root {
+  /* Global colors */
+  --global-color-red: #cb0037;
+  --global-color-red-light: #e496ac;
+  --global-color-neutral-xxxx-light: #ffffff;
+  --global-color-neutral-xx-light: #bdbdbd;
+  --global-color-neutral-xx-dark: #7f7f7f;
+  --global-color-neutral-xxxx-dark: #000000;
+  --global-color-Spotify-dark: #020202;
+  --global-color-Spotify-green: #1ed760;
+
+  --global-placeholder-color: var(--global-color-neutral-xx-light);
+
+  /* global page settings */
+  --global-page-color: var(--global-color-neutral-xxxx-dark);
+  --global-page-backgroundColor: var(--global-color-neutral-xxxx-light);
+  --global-selection-backgroundColor: var(--global-color-red);
+
+  /* border box */
+  --global-borderRadius: 3px;
+  --global-borderWidth: 1px;
+  --global-borderWidth-md: calc(var(--global-borderWidth) * 1.5);
+  --global-boxshadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.5);
+
+  /* Buttons */
+  --button-borderRadius: 3px;
+  --button-borderwith: calc(var(--global-borderWidth) * 2);
+
+  /* Baseline settings */
+  --global-baseline: 8px;
+  --global-whitespace: calc(var(--global-baseline) * 3); /* = 24px */
+
+  --global-whitespace-xxs: calc(var(--global-baseline) * 0.5); /* = 4px */
+  --global-whitespace-xs: calc(var(--global-baseline) * 1); /*  = 8px */
+  --global-whitespace-sm: calc(var(--global-baseline) * 1.5); /*  = 12px */
+  --global-whitespace-md: calc(var(--global-baseline) * 2); /*  = 16px */
+  --global-whitespace-lg: calc(var(--global-baseline) * 2.5); /*  = 20px */
+  --global-whitespace-xl: calc(var(--global-baseline) * 4); /*  = 32px */
+  --global-whitespace-xxl: calc(var(--global-whitespace) * 2); /*  = 48px */
+  --global-whitespace-xxxl: calc(var(--global-whitespace) * 4); /*  = 96x */
+
+  /* fontsizes */
+  --global-fontsize-xxs: 10px;
+  --global-fontsize-xs: 12px;
+  --global-fontsize-sm: 14px;
+  --global-fontsize: 16px;
+  --global-fontsize-md: 20px;
+
+  /* pop-up */
+  --global-popup-height-logout: 280px;
+}
+
+/*------------------------------------*\
+#GENERIC
+\*------------------------------------*/
+
+/*
+    Generic: Page
+    ---
+    Global page styles + universal box-sizing:
+*/
+
+html {
+  font-size: var(--global-fontsize);
+  line-height: 1.5;
+  font-family: "Assistant", arial, sans-serif;
+  font-weight: 400;
+  color: var(--global-color-neutral-xxxx-dark);
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/*
+* Remove text-shadow in selection highlight:
+* https://twitter.com/miketaylr/status/12228805301
+*
+* Customize the background color to match your design.
+*/
+
+::-moz-selection {
+  background: var(--global-color-red);
+  color: white;
+  text-shadow: none;
+}
+
+::selection {
+  background: var(--global-color-red);
+  color: white;
+  text-shadow: none;
+}
+
+/*------------------------------------*\
+#Elements
+\*------------------------------------*/
+
+/*
+Elements: Images
+---
+Default markup for images to make them responsive
+*/
+
+img {
+  max-width: 100%;
+  vertical-align: top;
+}
+
+/*
+    Elements: typography
+    ---
+    Default markup for typographic elements
+*/
+
+h1,
+h2 {
+  font-weight: 600;
+}
+
+h1 {
+  font-size: var(--global-fontsize-md);
+  line-height: 1.5;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  display: flex;
+  justify-content: center;
+}
+
+h2 {
+  font-size: var(--global-fontsize);
+  line-height: 1.5;
+  margin: 0 0 var(--global-whitespace);
+  color: var(--global-color-red);
+}
+
+label,
+input {
+  display: block;
+}
+
+p {
+  margin: 0;
+}
+
+ol,
+ul,
+dl,
+table,
+address,
+figure {
+  margin: 0 0 var(--global-whitespace);
+}
+
+ul,
+ol {
+  padding-left: var(--global-whitespace);
+}
+
+li ul,
+li ol {
+  margin-bottom: 0;
+}
+
+hr {
+  border: 0;
+  height: var(--global-borderWidth);
+  background: LightGrey;
+  margin: 0 0 var(--global-whitespace);
+}
+
+a {
+  --link-transition: all var(--global-transitionDuration-alpha)
+    var(--global-transitionEasing-out);
+  transition: var(--link-transition);
+  color: var(--link-color, var(--global-color-alpha));
+  text-decoration: none;
+}
+
+a:visited {
+  color: var(--global-color-neutral-xx-dark);
+}
+
+a:active {
+  color: var(--global-color-neutral-xx-dark);
+}
+
+a:focus {
+  color: var(--global-color-neutral-xx-dark);
+}
+
+label,
+input {
+  display: block;
+}
+
+select {
+  width: 100%;
+}
+
+input::placeholder {
+  color: var(--global-placeholder-color);
+}
+
+input:focus,
+input:hover {
+  outline: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  margin-top: auto;
+}
+
+/*------------------------------------*\
+#OBJECTS
+\*------------------------------------*/
+
+/*
+    Objects: Row
+    ---
+    Creates a horizontal row that stretches the viewport and adds padding around children
+*/
+
+.o-row {
+  position: relative;
+  padding: 0;
+  background-color: var(--global-color-neutral-xxxx-light);
+}
+
+.o-row__body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*
+    Objects: Container
+    ---
+    Creates a horizontal container that sets de global max-width
+*/
+
+.o-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 79.5em; /* 79.5 * 16px = 1272 */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.o-container__playlists {
+  display: grid;
+  grid-template-columns: repeat(2, 146px);
+  grid-template-rows: auto;
+  grid-gap: var(--global-whitespace-lg);
+  justify-items: center;
+  padding-bottom: var(--global-whitespace-xxl);
+}
+
+.o-container__songs {
+  display: grid;
+  padding-bottom: var(--global-whitespace-lg);
+}
+
+.o-container__playlists-toevoegen {
+  display: grid;
+  padding-bottom: var(--global-whitespace-lg);
+  cursor: pointer;
+}
+
+.o-container__toevoegen {
+  display: grid;
+}
+
+.o-container__aanpassen {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 79.5em; /* 79.5 * 16px = 1272 */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.o-container__aanpassen-songs {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-gap: 0 var(--global-whitespace-lg);
+  justify-items: center;
+}
+
+@media (min-width: 768px) {
+  .o-container__playlists {
+    display: grid;
+    grid-template-columns: repeat(3, 146px);
+    grid-template-rows: auto;
+    grid-gap: var(--global-whitespace-lg);
+  }
+
+  .o-container__songs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 0 var(--global-whitespace-lg);
+    justify-items: center;
+  }
+
+  .o-container__playlists-toevoegen {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 0 var(--global-whitespace-lg);
+    justify-items: center;
+  }
+
+  .o-container__toevoegen {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 45em;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr;
+    justify-items: center;
+    align-items: flex-start;
+  }
+}
+
+@media (min-width: 1024px) {
+  .o-container__playlists {
+    display: grid;
+    grid-template-columns: repeat(5, 146px);
+    grid-template-rows: auto;
+    grid-gap: var(--global-whitespace-lg);
+    justify-items: center;
+  }
+
+  .o-container__songs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 0 var(--global-whitespace-lg);
+    justify-items: center;
+  }
+}
+
+.o-container__preview {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 79.5em; /* 79.5 * 16px = 1272 */
+  width: 100%;
+}
+
+.o-container__search-songs {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 79.5em; /* 79.5 * 16px = 1272 */
+  width: 100%;
+}
+
+.o-container__zoeken {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 79.5em; /* 79.5 * 16px = 1272 */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: calc(var(--global-whitespace-xl) * 2);
+}
+/*------------------------------------*\
+#COMPONENTS
+\*------------------------------------*/
+
+/*
+	Component: title
+*/
+
+.c-top__border {
+  color: var(--global-color-neutral-xxxx-light);
+  background-color: var(--global-color-red);
+  height: 56px;
+}
+
+.c-top__border-flex {
+  display: grid;
+  grid-template-columns: 80px auto 80px;
+  grid-template-rows: 56px;
+}
+
+.c-top__border-flex a:hover {
+  background-color: var(--global-color-neutral-xxxx-light);
+  fill: var(--global-color-red);
+}
+
+.c-top__border-title {
+  grid-column: 2;
+  justify-self: center;
+  align-self: center;
+}
+
+.c-title {
+  color: var(--global-color-neutral-xx-light);
+  margin: var(--global-whitespace-lg);
+}
+
+.c-title__song-amount {
+  display: flex;
+  justify-content: center;
+  font-weight: 800;
+  color: var(--global-color-red);
+  padding: var(--global-whitespace-lg);
+}
+
+/*
+	Component: playlist
+*/
+.c-playlist {
+  border: solid var(--global-borderWidth);
+  border-color: var(--global-color-neutral-xx-light);
+  width: 148px;
+  height: 184px;
+  cursor: pointer;
+}
+
+.c-playlist:hover {
+  border: solid var(--global-borderWidth);
+  border-color: var(--global-color-neutral-xx-light);
+  width: 148px;
+  height: 184px;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.c-album__image {
+  padding: 0px;
+  margin: 0px;
+  width: 146px;
+  height: 144px;
+}
+
+.c-album.c-add {
+  width: 146px;
+  height: 144px;
+  background-color: var(--global-color-red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.c-playlist__underlabel {
+  padding: var(--global-whitespace-sm) var(--global-whitespace-md);
+  display: flex;
+  justify-content: space-between;
+}
+
+.c-playlist__underlabel .c-tekst {
+  font-size: var(--global-fontsize-xs);
+  color: var(--global-color-neutral-xxxx-dark);
+}
+
+.c-playlist__underlabel .c-add {
+  padding: var(--global-whitespace-sm) var(--global-whitespace-md);
+}
+
+/*
+	Component: playlist Spotify
+*/
+
+.c-playlist__Spotify {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*
+	Component: songs
+*/
+.c-song {
+  display: grid;
+  grid-template-columns: 40px 240px 24px;
+  grid-template-rows: repeat(20, 1f);
+  font: inherit;
+  font-size: var(--global-fontsize-sm);
+}
+
+.c-song.c-song__add {
+  cursor: pointer;
+  color: var(--global-color-neutral-xxxx-dark);
+}
+
+.c-song.c-song__add-full {
+  color: var(--global-color-neutral-xx-dark);
+  pointer-events: none;
+}
+
+.c-song__add > .c-song__image {
+  fill: var(--global-color-red);
+}
+
+.c-song__image {
+  grid-column: 1;
+  width: 40px;
+  height: 40px;
+}
+
+.c-song__image.c-add {
+  background-color: var(--global-color-red);
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.c-song__image.c-add-full {
+  background-color: var(--global-color-neutral-xx-dark);
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.c-song__title {
+  grid-column: 2;
+  align-self: center;
+  padding-left: 14px;
+}
+
+.c-song__id {
+  display: none;
+}
+
+.c-song .c-icon__delete {
+  grid-column: 3;
+  align-self: center;
+  fill: var(--global-color-neutral-xx-light);
+  cursor: pointer;
+}
+
+.c-song .c-icon__delete:hover {
+  fill: var(--global-color-red);
+}
+
+.c-song__toevoegen {
+  display: grid;
+  grid-template-columns: 40px 192px 72px;
+  grid-template-rows: repeat(20, 1f);
+  font: inherit;
+  font-size: var(--global-fontsize-xs);
+}
+
+/*
+	Component: playlist
+*/
+
+.c-playlist__toevoegen {
+  display: grid;
+  grid-template-columns: 40px 192px 72px;
+  grid-template-rows: repeat(20, 1f);
+  font: inherit;
+  font-size: var(--global-fontsize-xs);
+}
+
+.c-playlist__toevoegen:hover {
+  display: grid;
+  grid-template-columns: 40px 192px 72px;
+  grid-template-rows: repeat(20, 1f);
+  font: inherit;
+  font-size: var(--global-fontsize-xs);
+  color: var(--global-color-red);
+}
+
+/*
+	Component: settings
+*/
+
+.c-settings {
+  display: flex;
+  justify-content: center;
+}
+
+.c-settings__single {
+  max-width: 264px;
+}
+
+.c-settings__single-setting {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--global-whitespace-xs);
+  font-size: var(--global-fontsize-xs);
+  font-weight: 600;
+}
+
+.c-settings__single-setting:hover {
+  color: var(--global-color-red);
+  fill: var(--global-color-red);
+}
+
+.c-settings__single-setting:hover > .c-icon__go {
+  color: var(--global-color-red);
+  fill: var(--global-color-red);
+}
+
+.c-profile__text {
+  text-align: center;
+  color: var(--global-color-neutral-xxxx-dark);
+  font-size: var(--global-fontsize);
+  font-weight: 600;
+}
+/*
+    Component: Logo
+*/
+
+/*
+	Component: Icons
+*/
+.c-icon__add {
+  width: 104px;
+  height: 104px;
+  fill: var(--global-color-neutral-xxxx-light);
+}
+
+.c-icon__add__small {
+  fill: var(--global-color-neutral-xxxx-light);
+}
+
+.c-icon__edit {
+  width: 15px;
+  height: 15px;
+  fill: var(--global-color-neutral-xx-light);
+}
+
+.c-icon__edit:hover {
+  width: 15px;
+  height: 15px;
+  fill: var(--global-color-red);
+}
+
+.c-icon__edit-single-playlist {
+  width: 100%;
+  height: 100%;
+  fill: var(--global-color-neutral-xxxx-light);
+  justify-self: center;
+  align-self: center;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+.c-icon__edit-playlist-large {
+  width: 80px;
+  height: 80px;
+  fill: var(--global-color-red);
+  filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.3));
+  display: block;
+  margin: auto;
+  margin-bottom: var(--global-whitespace-lg);
+}
+
+.c-icon__arrow-back {
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  fill: var(--global-color-neutral-xxxx-light);
+  justify-self: center;
+  align-self: center;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+.c-icon__logout {
+  width: 100%;
+  height: 100%;
+  fill: var(--global-color-neutral-xxxx-light);
+  grid-column: 3;
+  justify-self: center;
+  align-self: center;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+.c-icon__logout-large {
+  width: 80px;
+  height: 80px;
+  fill: var(--global-color-red);
+  filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.3));
+  display: block;
+  margin: auto;
+}
+
+.c-icon__line {
+  stroke: var(--global-color-neutral-xx-light);
+  height: var(--global-borderWidth);
+}
+
+.c-icon__line-red {
+  stroke: var(--global-color-red);
+  height: var(--global-borderWidth);
+  margin: 14px 0;
+}
+
+.c-icon__go {
+  fill: var(--global-color-neutral-xx-dark);
+}
+
+.c-icon__person {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  fill: var(--global-color-neutral-xxxx-dark);
+}
+
+.c-icon__close {
+  fill: var(--global-color-neutral-xx-dark);
+}
+
+.c-icon__close:hover {
+  fill: var(--global-color-red);
+}
+
+.c-icon__delete {
+  width: 24px;
+  height: 24px;
+  fill: var(--global-color-red);
+}
+
+.c-icon__delete-large {
+  width: 80px;
+  height: 80px;
+  fill: var(--global-color-red);
+  filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.3));
+  display: block;
+  margin: auto;
+  transform: translateY(-10px);
+}
+
+.c-icon__prev {
+  transform: scale(-1);
+  margin: auto;
+}
+
+.c-icon__prev-active {
+  cursor: pointer;
+  fill: var(--global-color-red);
+}
+
+.c-icon__prev-non_active {
+  fill: var(--global-color-neutral-xx-light);
+  pointer-events: none;
+}
+
+.c-icon__next {
+  margin: auto;
+}
+
+.c-icon__next-active {
+  cursor: pointer;
+  fill: var(--global-color-red);
+}
+
+.c-icon__next-non_active {
+  fill: var(--global-color-neutral-xx-light);
+  pointer-events: none;
+}
+
+.c-icon__dots {
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 32px;
+  width: 100%;
+  margin: auto;
+  left: 0;
+  right: 0;
+}
+
+.c-icon__dot {
+  height: 8px;
+  width: 8px;
+  margin: 0 8px;
+  border: solid var(--global-borderWidth);
+  border-color: var(--global-color-red);
+  background-color: var(--global-color-neutral-xxxx-light);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.c-icon__dot-active {
+  background-color: var(--global-color-red);
+}
+
+.vl {
+  display: none;
+  border-left: var(--global-borderWidth) solid var(--global-color-red);
+  height: 234px;
+  padding-right: 14px;
+  align-items: center;
+}
+
+.vl2 {
+  display: none;
+  border-left: var(--global-borderWidth) solid var(--global-color-red);
+  height: 370px;
+  padding-right: 14px;
+  align-items: center;
+}
+
+@media (min-width: 720px) {
+  .vl {
+    display: block;
+  }
+
+  .vl2 {
+    display: block;
+  }
+}
+
+/*
+	Component: Card
+*/
+
+.c-card__body {
+  padding-top: var(--global-whitespace-lg);
+  margin-top: 0px;
+}
+
+@media (min-width: 720px) {
+  .c-card__body {
+    padding-top: var(--global-whitespace-lg);
+    margin-top: var(--global-whitespace-lg);
+    border: var(--global-borderWidth) solid;
+    border-color: var(--global-color-red);
+    height: 512px;
+    width: 360px;
+    border-radius: 10px;
+    box-shadow: var(--global-boxshadow);
+  }
+
+  .c-card__body-Spotify {
+    padding-top: var(--global-whitespace-lg);
+    margin-top: var(--global-whitespace-lg);
+    border: var(--global-borderWidth) solid;
+    border-color: var(--global-color-red);
+    /*border-color: var(--global-color-Spotify-green);*/
+    background-color: var(--global-color-Spotify-dark);
+    height: 512px;
+    width: 360px;
+    border-radius: 10px;
+    box-shadow: var(--global-boxshadow);
+  }
+
+  .c-card__body.c-settings {
+    padding-top: calc(var(--global-whitespace-lg) * 2);
+  }
+}
+
+/*
+	Component: Background
+*/
+@media (max-width: 720px) {
+  .c-background__Spotify {
+    background-color: var(--global-color-Spotify-dark);
+  }
+
+  .c-background__Spotify .o-row {
+    background-color: var(--global-color-Spotify-dark);
+  }
+}
+
+/*
+    Component: Input
+*/
+
+.c-input {
+  font: inherit;
+  width: 264px;
+  font-size: var(--global-fontsize);
+  font-weight: 400;
+  color: var(--global-color-dark);
+  line-height: 24px;
+  padding: var(--global-whitespace-sm);
+  border: 1px solid #e2e3e7;
+  border-radius: 4px;
+  -webkit-appearance: none;
+}
+
+/*
+    Component: Label
+*/
+
+.c-label {
+  font-size: var(--global-fontsize-sm);
+  line-height: var(--global-whitespace-md);
+  color: var(--global-color-dark);
+  margin-bottom: var(--global-whitespace-xs);
+  font-weight: 600;
+}
+
+/*
+    Component: Label
+*/
+
+.c-preview {
+  display: flex;
+  justify-content: center;
+}
+
+.c-preview__arrows {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 var(--global-whitespace-xxl) var(--global-whitespace-xl)
+    var(--global-whitespace-xxl);
+}
+
+.c-widget__song {
+  display: none;
+}
+
+.c-smiley__green,
+.c-smiley__red {
+  margin: 64px 12px;
+  z-index: 1;
+}
+
+.c-smiley__green:hover,
+.c-smiley__red:hover {
+  transform: scale(1.1);
+}
+
+.c-iframe {
+  width: 260px;
+  height: 80px;
+}
+
+@media (min-width: 720px) {
+  .c-preview__arrows {
+    position: absolute;
+    max-width: 688px;
+    margin: auto;
+    top: 45vh;
+    transform: translateY(-50%);
+  }
+
+  .c-widget__song {
+    padding: 15vh;
+  }
+
+  .c-smiley__green,
+  .c-smiley__red {
+    margin: var(--global-whitespace-lg) 64px;
+    z-index: 1;
+  }
+
+  .c-iframe {
+    width: 400px;
+    height: 80px;
+  }
+}
+
+/*
+    Component: Zoeken
+*/
+
+.c-zoeken {
+  padding-bottom: 100px;
+}
+
+/*
+    Component: Pop-up
+*/
+
+/* All pop-ups */
+.c-popup {
+  display: none; /* Hidden by default */
+  position: fixed;
+  width: 100%; /* Full width */
+  height: 100%;
+  z-index: 1;
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.c-popup__background {
+  position: fixed; /* Stay in place */
+  left: 0;
+  bottom: 0;
+  width: 100%; /* Full width */
+  overflow: auto; /* Enable scroll if needed */
+  transform: translateY(-62px);
+  overflow: visible;
+}
+
+.c-popup__background.c-popup__bottom {
+  position: fixed; /* Stay in place */
+  left: 0;
+  bottom: 0;
+  width: 100%; /* Full width */
+  overflow: auto; /* Enable scroll if needed */
+  transform: translateY(0px);
+  overflow: visible;
+}
+
+@media (min-width: 720px) {
+  .c-popup__background {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    bottom: 30%;
+    left: 0;
+    right: 0;
+    max-width: 360px;
+    overflow: auto; /* Enable scroll if needed */
+    transform: translateY(0);
+    overflow: visible;
+  }
+
+  .c-popup__background.c-popup__bottom {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    bottom: 30%;
+    left: 0;
+    right: 0;
+    max-width: 360px;
+    overflow: auto; /* Enable scroll if needed */
+    transform: translateY(0);
+    overflow: visible;
+  }
+}
+
+/* logout */
+.c-popup__logout-card {
+  background-color: var(--global-color-neutral-xxxx-light);
+  width: 100%;
+  height: var(--global-popup-height-logout);
+  display: flex;
+  justify-content: center;
+}
+
+.c-popup__logout-card-content {
+  font-size: var(--global-fontsize);
+  font-weight: 800;
+  transform: translateY(-30px);
+}
+
+.c-popup__logout-card-content .c-tekst {
+  padding-top: calc(var(--global-whitespace-lg) * 2);
+  padding-bottom: var(--global-whitespace-lg);
+}
+
+.c-popup__logout-circle {
+  --circle-place: calc(var(--global-popup-height-logout) + 14px);
+  position: fixed;
+  right: 0;
+  top: -36px;
+  fill: var(--global-color-neutral-xxxx-light);
+}
+
+.c-popup__logout-close {
+  position: fixed;
+  right: 0;
+  bottom: var(--global-popup-height-logout);
+  z-index: 1;
+  fill: var(--global-color-neutral-xxxx-dark);
+  transform: translateX(-26px);
+}
+
+/* edit playlsit*/
+
+.c-popup__edit-playlist-card {
+  background-color: var(--global-color-neutral-xxxx-light);
+  width: 100%;
+  height: var(--global-popup-height-logout);
+  display: flex;
+  justify-content: center;
+}
+
+.c-popup__edit-playlist-card-content {
+  font-size: var(--global-fontsize);
+  font-weight: 800;
+  transform: translateY(-30px);
+}
+
+.c-popup__edit-playlist-card-content .c-tekst {
+  padding-top: 40px;
+}
+
+.c-popup__edit-playlist-circle {
+  --circle-place: calc(var(--global-popup-height-logout) + 14px);
+  position: fixed;
+  right: 0;
+  top: -36px;
+  fill: var(--global-color-neutral-xxxx-light);
+}
+
+.c-popup__edit-playlist-close {
+  position: fixed;
+  right: 0;
+  bottom: var(--global-popup-height-logout);
+  z-index: 1;
+  fill: var(--global-color-neutral-xxxx-dark);
+  transform: translateX(-26px);
+}
+
+/* delete playlist*/
+
+.c-popup__delete {
+  display: none; /* Hidden by default */
+  position: fixed;
+  width: 100%; /* Full width */
+  height: 100%;
+  z-index: 1;
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.c-popup__delete-card {
+  background-color: var(--global-color-neutral-xxxx-light);
+  width: 100%;
+  height: var(--global-popup-height-logout);
+  display: flex;
+  justify-content: center;
+}
+
+.c-popup__delete-card-content {
+  font-size: var(--global-fontsize);
+  font-weight: 800;
+  transform: translateY(-30px);
+}
+
+.c-popup__delete-card-content .c-tekst {
+  padding-top: calc(var(--global-whitespace-lg) * 2);
+  max-width: 264px;
+  text-align: center;
+}
+
+.c-popup__delete-circle {
+  --circle-place: calc(var(--global-popup-height-logout) + 14px);
+  position: fixed;
+  right: 0;
+  top: -36px;
+  fill: var(--global-color-neutral-xxxx-light);
+}
+
+.c-popup__delete-close {
+  position: fixed;
+  right: 0;
+  bottom: var(--global-popup-height-logout);
+  z-index: 1;
+  fill: var(--global-color-neutral-xxxx-dark);
+  transform: translateX(-26px);
+}
+
+/*
+    Component: Navbar
+*/
+
+.c-navbar {
+  background-color: var(--global-color-red);
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(
+    4,
+    calc(64px + (var(--global-whitespace-sm) * 2))
+  );
+  grid-template-rows: calc(38px + (var(--global-whitespace-sm) * 2));
+  /*grid-gap: var(--global-whitespace-lg);*/
+  justify-content: center;
+}
+
+.c-navbar a {
+  display: flex;
+  fill: var(--global-color-red-light);
+  align-items: center;
+  justify-content: center;
+}
+
+.c-navbar a:hover {
+  background-color: var(--global-color-neutral-xxxx-light);
+  fill: var(--global-color-red);
+}
+
+.c-navbar a.active {
+  fill: var(--global-color-neutral-xxxx-light);
+}
+
+.c-navbar a.active:hover {
+  background-color: var(--global-color-neutral-xxxx-light);
+  fill: var(--global-color-red);
+}
+
+/*
+    Component: Button
+*/
+
+.c-button__white {
+  width: 264px;
+  font-size: var(--global-fontsize);
+  line-height: 24px;
+  font: inherit;
+  color: var(--global-color-red);
+  font-weight: 600;
+  border-radius: 100px;
+  background: var(--global-color-neutral-xxxx-light);
+  padding: 10px 0;
+  border: 2px solid var(--global-color-red);
+  cursor: pointer;
+}
+
+.c-button__red {
+  width: 264px;
+  font-size: var(--global-fontsize);
+  line-height: 24px;
+  font: inherit;
+  color: var(--global-color-neutral-xxxx-light);
+  font-weight: 600;
+  border-radius: 100px;
+  background: var(--global-color-red);
+  padding: 10px 0;
+  border: 2px solid var(--global-color-neutral-xxxx-light);
+  margin: 10px 0px;
+  cursor: pointer;
+}
+
+.c-button__red-black-background {
+  width: 264px;
+  font-size: var(--global-fontsize);
+  line-height: 24px;
+  font: inherit;
+  color: var(--global-color-neutral-xxxx-light);
+  font-weight: 600;
+  border-radius: 100px;
+  background: var(--global-color-red);
+  padding: 10px 0;
+  border: 2px solid var(--global-color-neutral-xxxx-dark);
+  margin: var(--global-whitespace-xl) auto;
+  cursor: pointer;
+}
+
+.c-button__white-small {
+  width: 72px;
+  font-size: var(--global-fontsize-xs);
+  line-height: 16px;
+  font: inherit;
+  color: var(--global-color-red);
+  font-weight: 600;
+  border-radius: 100px;
+  background: var(--global-color-neutral-xxxx-light);
+  padding: 2px 0;
+  border: 2px solid var(--global-color-red);
+  margin: 10px 0px;
+  cursor: pointer;
+}
+
+.c-button__red-small {
+  width: 72px;
+  font-size: var(--global-fontsize-xs);
+  line-height: 16px;
+  font: inherit;
+  color: var(--global-color-neutral-xxxx-light);
+  font-weight: 600;
+  border-radius: 100px;
+  background: var(--global-color-red);
+  padding: 2px 0;
+  border: 2px solid var(--global-color-neutral-xxxx-light);
+  margin: 10px 0px;
+  cursor: pointer;
+}
+
+/* .c-button__white:hover,
+.c-button__red:hover {
+  background-color: var(--global-color-neutral-xxxx-light);
+  color: var(--global-color-red);
+  border: 2px dotted var(--global-color-red);
+} */
+
+/*
+	Component: radiobuttons
+*/
+
+.c-radiobuttons {
+  padding: var(--global-whitespace-md) 0;
+}
+
+.c-radiobuttons__container {
+  display: flex;
+  justify-content: start;
+}
+
+.c-radiobuttons__buttons {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  padding-right: 60px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.c-radiobuttons__buttons input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.c-radiobuttons__buttons-radio {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: var(--global-color-neutral-xx-light);
+  border-radius: 50%;
+}
+
+.c-radiobuttons__buttons:hover input ~ .c-radiobuttons__buttons-radio {
+  background-color: var(--global-color-neutral-xx-dark);
+}
+
+/* When the radio button is checked, add a blue background */
+.c-radiobuttons__buttons input:checked ~ .c-radiobuttons__buttons-radio {
+  background-color: var(--global-color-red);
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.c-radiobuttons__buttons input:checked ~ .c-radiobuttons__buttons-radio::after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.c-radiobuttons__buttons .c-radiobuttons__buttons-radio::after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
