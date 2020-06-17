@@ -36,6 +36,7 @@ function passString(PlaylistName, genre, artist) {
   window.localStorage.setItem("PlaylistName", PlaylistName);
   window.localStorage.setItem("genre", genre);
   window.localStorage.setItem("artist", artist);
+  window.localStorage.setItem("year", year);
   window.localStorage.setItem("Authorization_key", _token);
   location.href = "previewSongs.html";
 }

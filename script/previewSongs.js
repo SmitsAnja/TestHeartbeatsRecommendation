@@ -12,21 +12,39 @@ var slideIndex = 1;
 artist = "Rick Ashley";
 //arrayArtists = ["The Osmonds", "Jackson Five", "Edith Piaff"];
 //arrayGenres = ["french soundtrack", "belgian pop"];
-arrayArtists = localStorage.getItem("artist");
+
 if (localStorage.getItem("genre") != "") {
   arrayGenres = [`${localStorage.getItem("genre")}`, "belgian pop"];
 } else {
   arrayGenres = ["french soundtrack", "belgian pop"];
 }
+
+if (localStorage.getItem("artist") != "") {
+  arrayArtists = localStorage.getItem("artist");
+} else {
+  arrayArtists = ["The Osmonds", "Jackson Five", "Edith Piaff"];
+}
+
+if (localStorage.getItem("PlaylistName") != "") {
+  name_playlist = localStorage.getItem("PlaylistName");
+} else {
+  name_playlist = "geen naam ingevuld";
+}
 //name_playlist = "generateTest";
-name_playlist = localStorage.getItem("PlaylistName");
+
 var playlistID;
 // je kan max 5 seeds meegeven
 var arrayTracks = [];
 var arrayArtistsID = [];
-var yearBorn = 1955;
-var yearMin = 1955 + 16;
-var yearMax = 1955 + 30;
+
+if (localStorage.getItem("year") != "") {
+  var yearBorn = localStorage.getItem("year");
+} else {
+  var yearBorn = 1955;
+}
+
+var yearMin = yearBorn + 16;
+var yearMax = yearBorn + 30;
 
 var dictLikeDislike = [];
 var arrayRecommendationSongs;
