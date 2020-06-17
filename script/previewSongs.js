@@ -13,7 +13,11 @@ artist = "Rick Ashley";
 //arrayArtists = ["The Osmonds", "Jackson Five", "Edith Piaff"];
 //arrayGenres = ["french soundtrack", "belgian pop"];
 arrayArtists = localStorage.getItem("artist");
-arrayGenres = [`${localStorage.getItem("genre")}`, "belgian pop"];
+if (localStorage.getItem("genre") != "") {
+  arrayGenres = [`${localStorage.getItem("genre")}`, "belgian pop"];
+} else {
+  arrayGenres = ["french soundtrack", "belgian pop"];
+}
 //name_playlist = "generateTest";
 name_playlist = localStorage.getItem("PlaylistName");
 var playlistID;
