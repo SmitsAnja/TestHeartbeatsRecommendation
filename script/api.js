@@ -23,6 +23,7 @@ const redirectUri =
 const scopes = ["playlist-modify-private"];
 
 console.log(_token);
+passString();
 // If there is no token, redirect to Spotify authorization
 if (!_token) {
   console.log("ooops");
