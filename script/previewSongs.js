@@ -10,9 +10,12 @@ URI = "https://api.spotify.com/v1";
 user_id = "8437qbev57v9zy5tjwhgl6b0d";
 var slideIndex = 1;
 artist = "Rick Ashley";
-arrayArtists = ["The Osmonds", "Jackson Five", "Edith Piaff"];
-arrayGenres = ["french soundtrack", "belgian pop"];
-name_playlist = "generateTest";
+//arrayArtists = ["The Osmonds", "Jackson Five", "Edith Piaff"];
+//arrayGenres = ["french soundtrack", "belgian pop"];
+arrayArtists = localStorage.getItem("artist");
+arrayGenres = localStorage.getItem("genre");
+//name_playlist = "generateTest";
+name_playlist = localStorage.getItem("PlaylistName");
 var playlistID;
 // je kan max 5 seeds meegeven
 var arrayTracks = [];

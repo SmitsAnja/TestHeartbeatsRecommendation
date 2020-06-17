@@ -23,7 +23,7 @@ const redirectUri =
 const scopes = ["playlist-modify-private"];
 
 console.log(_token);
-passString();
+
 // If there is no token, redirect to Spotify authorization
 if (!_token) {
   console.log("ooops");
@@ -32,6 +32,17 @@ if (!_token) {
   )}&response_type=token`;
 }
 
-function passString() {
+function passString(PlaylistName, genre, artist) {
+  window.localStorage.setItem("PlaylistName", PlaylistName);
+  window.localStorage.setItem("genre", genre);
+  window.localStorage.setItem("artist", artist);
   window.localStorage.setItem("Authorization_key", _token);
+  location.href = "previewSongs.html";
+}
+
+function passStrings() {
+  PlaylistName = document.getElementById("playlistName").value;
+  genre = document.getElementById("genre").value;
+  artist = document.getElementById("artist").value;
+  passString(PlaylistName, genre, artist);
 }
