@@ -32,7 +32,7 @@ if (!_token) {
   )}&response_type=token`;
 }
 
-function passString(PlaylistName, genre, artist) {
+function passString(PlaylistName, genre, artist, year) {
   window.localStorage.setItem("PlaylistName", PlaylistName);
   window.localStorage.setItem("genre", genre);
   window.localStorage.setItem("artist", artist);
@@ -45,5 +45,6 @@ function passStrings() {
   PlaylistName = document.getElementById("playlistName").value;
   genre = document.getElementById("genre").value;
   artist = document.getElementById("artist").value;
-  passString(PlaylistName, genre, artist);
+  year = document.getElementById("year").value;
+  passString(PlaylistName, genre, artist, year);
 }
