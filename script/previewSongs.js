@@ -38,7 +38,7 @@ var arrayTracks = [];
 var arrayArtistsID = [];
 
 if (localStorage.getItem("yearInput") != "") {
-  var yearBorn = localStorage.getItem("yearInput");
+  var yearBorn = parseInt(localStorage.getItem("yearInput"));
 } else {
   var yearBorn = 1955;
 }
