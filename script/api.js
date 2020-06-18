@@ -22,16 +22,6 @@ const redirectUri =
   "https://smitsanja.github.io/TestHeartbeatsRecommendation/index.html";
 const scopes = ["playlist-modify-private"];
 
-console.log(_token);
-fetchMe();
-// If there is no token, redirect to Spotify authorization
-if (!_token) {
-  console.log("ooops");
-  window.location = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join(
-    "%20"
-  )}&response_type=token`;
-}
-
 let fetchMe = async function () {
   let customHeaders = {
     "Content-Type": "application/json",
@@ -47,6 +37,16 @@ let fetchMe = async function () {
   console.log("queryrespone search");
   console.log(queryResponse);
 };
+
+console.log(_token);
+fetchMe();
+// If there is no token, redirect to Spotify authorization
+if (!_token) {
+  console.log("ooops");
+  window.location = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join(
+    "%20"
+  )}&response_type=token`;
+}
 
 function passString(PlaylistName, genre, artist, yearInput) {
   window.localStorage.setItem("PlaylistName", PlaylistName);
