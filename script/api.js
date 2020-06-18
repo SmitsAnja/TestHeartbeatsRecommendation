@@ -32,6 +32,22 @@ if (!_token) {
   )}&response_type=token`;
 }
 
+let fetchMe = async function () {
+  let customHeaders = {
+    "Content-Type": "application/json",
+    Authorization: `Bearer ${_token}`,
+  };
+  // Eerst bouwen we onze url op
+  const SERVER_ENDPOINT = `https://api.spotify.com/v1/me`;
+  // Met de fetch API proberen we de data op te halen.
+  const response = await fetch(SERVER_ENDPOINT, {
+    headers: customHeaders,
+  });
+  const queryResponse = await response.json();
+  console.log("queryrespone search");
+  console.log(queryResponse);
+};
+
 function passString(PlaylistName, genre, artist, yearInput) {
   window.localStorage.setItem("PlaylistName", PlaylistName);
   window.localStorage.setItem("genre", genre);
@@ -42,9 +58,20 @@ function passString(PlaylistName, genre, artist, yearInput) {
 }
 
 function passStrings() {
+  fetchMe();
   PlaylistName = document.getElementById("playlistName").value;
   genre = document.getElementById("genre").value;
   artist = document.getElementById("artist").value;
   yearInput = document.getElementById("year").value;
   passString(PlaylistName, genre, artist, yearInput);
 }
+
+const fetchData = function (url) {
+  fetch(url, { headers: customHeaders })
+    .then((r) => r.json())
+    .then((data) => data);
+};
+
+document.addEventListener("DOMContentLoaded", function () {
+  console.info("domcontentloaded");
+});
