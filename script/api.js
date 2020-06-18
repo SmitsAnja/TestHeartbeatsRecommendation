@@ -22,7 +22,7 @@ const redirectUri =
   "https://smitsanja.github.io/TestHeartbeatsRecommendation/index.html";
 const scopes = ["playlist-modify-private"];
 
-let fetchMe = async function () {
+let fetchMe = async function (_token) {
   let customHeaders = {
     "Content-Type": "application/json",
     Authorization: `Bearer ${_token}`,
@@ -39,7 +39,7 @@ let fetchMe = async function () {
 };
 
 console.log(_token);
-fetchMe();
+fetchMe(_token);
 // If there is no token, redirect to Spotify authorization
 if (!_token) {
   console.log("ooops");
