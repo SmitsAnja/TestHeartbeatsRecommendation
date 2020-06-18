@@ -36,11 +36,11 @@ let fetchMe = async function (_token) {
   const queryResponse = await response.json();
   console.log("queryrespone search");
   console.log(queryResponse.id);
-  passStrings(queryResponse.id);
+  getStrings(queryResponse.id, queryResponse.display_name);
 };
 
 console.log(_token);
-fetchMe(_token);
+
 // If there is no token, redirect to Spotify authorization
 if (!_token) {
   console.log("ooops");
@@ -49,22 +49,34 @@ if (!_token) {
   )}&response_type=token`;
 }
 
-function passString(PlaylistName, genre, artist, yearInput, user_id) {
+function passString(
+  PlaylistName,
+  genre,
+  artist,
+  yearInput,
+  user_id,
+  display_name
+) {
   window.localStorage.setItem("PlaylistName", PlaylistName);
   window.localStorage.setItem("genre", genre);
   window.localStorage.setItem("artist", artist);
   window.localStorage.setItem("yearInput", yearInput);
   window.localStorage.setItem("user_id", user_id);
+  window.localStorage.setItem("display_name", display_name);
   window.localStorage.setItem("Authorization_key", _token);
   location.href = "previewSongs.html";
 }
 
-function passStrings(user_id) {
+function getStrings(user_id, display_name) {
   PlaylistName = document.getElementById("playlistName").value;
   genre = document.getElementById("genre").value;
   artist = document.getElementById("artist").value;
   yearInput = document.getElementById("year").value;
-  passString(PlaylistName, genre, artist, yearInput, user_id);
+  passString(PlaylistName, genre, artist, yearInput, user_id, display_name);
+}
+
+function passStrings() {
+  fetchMe(_token);
 }
 
 const fetchData = function (url) {

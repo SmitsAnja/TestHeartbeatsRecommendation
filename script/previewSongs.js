@@ -7,6 +7,7 @@ let customHeaders = {
 };
 
 user_id = localStorage.getItem("user_id");
+display_name = localStorage.getItem("display_name");
 URI = "https://api.spotify.com/v1";
 //user_id = "8437qbev57v9zy5tjwhgl6b0d";
 var slideIndex = 1;
@@ -54,9 +55,14 @@ var arrayRecommendationSongsTwenty = [];
 const init = async function () {
   //artistsid();
   // belangrijk search aanzetten!
+  loadName(display_name);
   searchtracksYears();
   //createPlaylist();
 };
+
+function loadName(name) {
+  document.querySelector(".js-load_gebruikersnaam").innerHTML = name;
+}
 
 /* #region navigate songs */
 // Next/previous controls
