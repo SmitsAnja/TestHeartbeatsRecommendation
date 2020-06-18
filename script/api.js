@@ -23,7 +23,7 @@ const redirectUri =
 const scopes = ["playlist-modify-private"];
 
 console.log(_token);
-
+fetchMe();
 // If there is no token, redirect to Spotify authorization
 if (!_token) {
   console.log("ooops");
@@ -58,7 +58,6 @@ function passString(PlaylistName, genre, artist, yearInput) {
 }
 
 function passStrings() {
-  fetchMe();
   PlaylistName = document.getElementById("playlistName").value;
   genre = document.getElementById("genre").value;
   artist = document.getElementById("artist").value;
