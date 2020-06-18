@@ -35,7 +35,8 @@ let fetchMe = async function (_token) {
   });
   const queryResponse = await response.json();
   console.log("queryrespone search");
-  console.log(queryResponse);
+  console.log(queryResponse.id);
+  passStrings(queryResponse.id);
 };
 
 console.log(_token);
@@ -48,21 +49,22 @@ if (!_token) {
   )}&response_type=token`;
 }
 
-function passString(PlaylistName, genre, artist, yearInput) {
+function passString(PlaylistName, genre, artist, yearInput, user_id) {
   window.localStorage.setItem("PlaylistName", PlaylistName);
   window.localStorage.setItem("genre", genre);
   window.localStorage.setItem("artist", artist);
   window.localStorage.setItem("yearInput", yearInput);
+  window.localStorage.setItem("user_id", user_id);
   window.localStorage.setItem("Authorization_key", _token);
   location.href = "previewSongs.html";
 }
 
-function passStrings() {
+function passStrings(user_id) {
   PlaylistName = document.getElementById("playlistName").value;
   genre = document.getElementById("genre").value;
   artist = document.getElementById("artist").value;
   yearInput = document.getElementById("year").value;
-  passString(PlaylistName, genre, artist, yearInput);
+  passString(PlaylistName, genre, artist, yearInput, user_id);
 }
 
 const fetchData = function (url) {

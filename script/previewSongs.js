@@ -6,8 +6,9 @@ let customHeaders = {
   Authorization: `Bearer ${Authorization_key}`,
 };
 
+user_id = localStorage.getItem("user_id");
 URI = "https://api.spotify.com/v1";
-user_id = "8437qbev57v9zy5tjwhgl6b0d";
+//user_id = "8437qbev57v9zy5tjwhgl6b0d";
 var slideIndex = 1;
 artist = "Rick Ashley";
 //arrayArtists = ["The Osmonds", "Jackson Five", "Edith Piaff"];
